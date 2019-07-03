@@ -61,14 +61,13 @@
 								
 								<div class="form-group">
                                     <label>Category</label><br>
-                                    <select class="form-control" id="list" onchange="Show();">
-										<option value="volvo">--Category--</option>
+                                    <select class="form-control" name="category">
+										<option value="-">--Category--</option>
 										<%category.forEach(function(item){%>
-											<option value="saab"><%=item.catName%></option>
+											<option value="<%=item.catName%>"><%=item.catName%></option>
 										<%})%>
 									</select>
 								</div>
-								<input type="hidden" id="txt2" name="category" />
 								
                                 <div class="form-group">
                                     <label>Description</label>
@@ -90,13 +89,6 @@
 			</div>
 		</div><!-- /.row -->
 	</div><!--/.main-->
-
-	<script type="text/javascript" >
-        function Show() {
-			var list = document.getElementById("list");
-            document.getElementById("txt2").value = list.options[list.selectedIndex].text;
-        }
-    </script>
 	
 <script src="/admin/js/jquery-1.11.1.min.js"></script>
 	<script src="/admin/js/bootstrap.min.js"></script>
