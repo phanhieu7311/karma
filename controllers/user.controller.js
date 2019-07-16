@@ -133,6 +133,7 @@ module.exports.confirm=function(req,res){
 //search
 module.exports.search=function(req,res){
     var prodname=req.body.search;
+    var id=0;
     //prodname=prodname.toLowerCase();
     var page=parseInt(req.query.page)||1;
     var perPage=9;
@@ -146,7 +147,7 @@ module.exports.search=function(req,res){
                     prod++;
             })
             var maxpage=Math.ceil(prod/perPage);
-            res.render('shop',{category:categories,product:products.slice(start,end),page:page,maxpage})
+            res.render('shop',{category:categories,product:products.slice(start,end),page:page,maxpage,id})
         })
     })
 }
